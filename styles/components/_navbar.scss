@@ -1,0 +1,108 @@
+@use "../variables/" as *;
+@use "../base/" as *;
+
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &__text {
+    font-family: $font--heading;
+    background: $gradient--primary;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.8rem;
+  }
+}
+
+.navbar {
+  z-index: 100;
+  position: fixed;
+  margin: 20px 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  padding: 10px 30px;
+  background: white;
+  box-shadow: $shadow--navbar;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .hamburger {
+    height: 15px;
+    width: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 3px;
+    cursor: pointer;
+    &__bar {
+      height: 3px;
+      width: 3px;
+      background: black;
+      border-radius: 1px;
+      transition: 250ms ease-in-out;
+    }
+    &.cross {
+      .hamburger__bar:nth-of-type(even) {
+        transform: scale(0);
+      }
+    }
+  }
+}
+
+.full-screen-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: #101214;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: all 1s cubic-bezier(0.96, 0.35, 0.41, 0.99);
+  &.visible {
+    transform: translate(0);
+  }
+  .active-text {
+    font-size: 7rem;
+    position: absolute;
+    font-family: $font--heading;
+    color: rgba($color: #fff, $alpha: 0.05);
+    z-index: -10;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: 15px;
+    opacity: 0;
+    transition: 100ms ease-out;
+    white-space: nowrap;
+    &.visible {
+      opacity: 1;
+      letter-spacing: 5px;
+    }
+  }
+  &__list {
+    text-align: center;
+    list-style: none;
+    &__item {
+      font-size: 3rem;
+      font-family: $font--heading;
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+      &__link {
+        color: transparent;
+        text-decoration: none;
+        -webkit-text-stroke: 1px white;
+        letter-spacing: 2px;
+        transition: 100ms ease-out;
+        &:hover {
+          letter-spacing: 1px;
+          color: white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo__text {
+  font-family: "Bebas Neue", cursive;
+  background: linear-gradient(70.97deg, #f7aa1f 18.12%, #fbe521 94.66%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  font-size: 1.8rem;
+}
+
+.navbar {
+  z-index: 100;
+  position: fixed;
+  margin: 20px 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  padding: 10px 30px;
+  background: white;
+  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.1);
+  border-radius: 9999px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .hamburger {
+  height: 15px;
+  width: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 3px;
+  cursor: pointer;
+}
+.navbar .hamburger__bar {
+  height: 3px;
+  width: 3px;
+  background: black;
+  border-radius: 1px;
+  transition: 250ms ease-in-out;
+}
+.navbar .hamburger.cross .hamburger__bar:nth-of-type(even) {
+  transform: scale(0);
+}
+
+.full-screen-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: #101214;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: all 1s cubic-bezier(0.96, 0.35, 0.41, 0.99);
+}
+.full-screen-nav.visible {
+  transform: translate(0);
+}
+.full-screen-nav .active-text {
+  font-size: 7rem;
+  position: absolute;
+  font-family: "Bebas Neue", cursive;
+  color: rgba(255, 255, 255, 0.05);
+  z-index: -10;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  letter-spacing: 15px;
+  opacity: 0;
+  transition: 100ms ease-out;
+  white-space: nowrap;
+}
+.full-screen-nav .active-text.visible {
+  opacity: 1;
+  letter-spacing: 5px;
+}
+.full-screen-nav__list {
+  text-align: center;
+  list-style: none;
+}
+.full-screen-nav__list__item {
+  font-size: 3rem;
+  font-family: "Bebas Neue", cursive;
+}
+.full-screen-nav__list__item:not(:last-child) {
+  margin-bottom: 1em;
+}
+.full-screen-nav__list__item__link {
+  color: transparent;
+  text-decoration: none;
+  -webkit-text-stroke: 1px white;
+  letter-spacing: 2px;
+  transition: 100ms ease-out;
+}
+.full-screen-nav__list__item__link:hover {
+  letter-spacing: 1px;
+  color: white;
+}/*# sourceMappingURL=main.css.map */

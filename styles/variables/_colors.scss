@@ -1,0 +1,17 @@
+$clr--yellow: #fbe521;
+$clr--orange: #f7aa1f;
+
+$gradient--primary: linear-gradient(
+  70.97deg,
+  $clr--orange 18.12%,
+  $clr--yellow 94.66%
+);
+
+$clr--blue--100: #4494ff;
+$clr--blue--200: #3372c6;
+
+$gradient--secondary: linear-gradient(
+  221.45deg,
+  $clr--blue--100 7.52%,
+  $clr--blue--200 76.55%
+);
