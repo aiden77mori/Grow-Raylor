@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .logo {
   text-decoration: none;
   display: flex;
@@ -55,6 +60,43 @@
 }
 .navbar .hamburger.cross .hamburger__bar:nth-of-type(even) {
   transform: scale(0);
+}
+.navbar__list {
+  list-style: none;
+  gap: 20px;
+  display: none;
+}
+.navbar__list__item {
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+.navbar__list__item__link {
+  text-decoration: none;
+  transition: 100ms;
+}
+.navbar__list__item__link.active {
+  font-weight: 600;
+  color: #f7aa1f;
+}
+.navbar__list__item__link:hover {
+  color: #f7aa1f;
+}
+@media (min-width: 1024px) {
+  .navbar {
+    width: 75%;
+  }
+  .navbar .hamburger {
+    display: none;
+  }
+  .navbar__list {
+    display: flex;
+  }
+}
+@media (min-width: 768px) {
+  .navbar {
+    padding: 20px 50px;
+    width: 85%;
+  }
 }
 
 .full-screen-nav {

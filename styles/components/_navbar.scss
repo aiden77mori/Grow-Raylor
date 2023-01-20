@@ -1,5 +1,6 @@
 @use "../variables/" as *;
 @use "../base/" as *;
+@use "../abstracts/" as *;
 
 .logo {
   text-decoration: none;
@@ -28,6 +29,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   .hamburger {
     height: 15px;
     width: 15px;
@@ -48,6 +50,39 @@
         transform: scale(0);
       }
     }
+  }
+  &__list {
+    list-style: none;
+    gap: 20px;
+    display: none;
+    &__item {
+      font-size: 1rem;
+      font-family: $font--text;
+      &__link {
+        text-decoration: none;
+        transition: 100ms;
+        &.active {
+          font-weight: 600;
+          color: $clr--orange;
+        }
+        &:hover {
+          color: $clr--orange;
+        }
+      }
+    }
+  }
+  @include mq("lg") {
+    width: 75%;
+    .hamburger {
+      display: none;
+    }
+    &__list {
+      display: flex;
+    }
+  }
+  @include mq("md") {
+    padding: 20px 50px;
+    width: 85%;
   }
 }
 

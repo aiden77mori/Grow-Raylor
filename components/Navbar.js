@@ -37,6 +37,28 @@ const Navbar = () => {
           <div className="hamburger__bar" id="bar-8"></div>
           <div className="hamburger__bar" id="bar-9"></div>
         </div>
+        <ul className="navbar__list">
+          <li className="navbar__list__item">
+            <Link href="/" className="navbar__list__item__link">
+              About us
+            </Link>
+          </li>
+          <li className="navbar__list__item">
+            <Link href="/" className="navbar__list__item__link">
+              Our Services
+            </Link>
+          </li>
+          <li className="navbar__list__item">
+            <Link href="/" className="navbar__list__item__link">
+              Pricing
+            </Link>
+          </li>
+          <li className="navbar__list__item">
+            <Link href="/" className="navbar__list__item__link">
+              Contact us
+            </Link>
+          </li>
+        </ul>
       </div>
       <div className={`full-screen-nav ${visible ? "visible" : ""}`}>
         <span className={`active-text ${activeTextVisible ? "visible" : ""}`}>
